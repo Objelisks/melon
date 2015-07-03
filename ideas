@@ -1,0 +1,93 @@
+https://twitter.com/jplur_/status/574003658083340288
+https://twitter.com/urbanfriendden/status/601349627397410816
+https://twitter.com/droqen/status/600856806731042816
+https://twitter.com/bfod/status/534098077351956480
+https://twitter.com/kinifi/status/529007952385310722
+
+code structure
+
+player : PhysicsCharacter
+  -input
+  -item use
+effect - use Entity Tags
+  -damage
+  -growth
+grappling hook
+  -projectile
+  -path
+list of enemies
+world : PhysicsScene
+  -actors
+  -statics
+
+collision events
+  hookproj->hooktarget: create hookline
+
+load world from blender file?
+investigate world editors
+  - blender +- export script?
+  - polycode editor -> xml format?
+
+
+
+controls
+C - sword
+X - hook
+Z - magic
+
+items: (not in order of appearance)
+grappling hook
+  -obstacles:
+    -- empty space with grappling hook signifier on both (or just one) sides
+    -- enemy that can only be removed by pulling into a hole
+sword
+  -obstacles
+    -- kill bad guys (lots of bad guys have shields / other defense against sword)
+    -- cut plants
+fertilizer
+  -obstacles
+    -- grow tiny plants
+    -- grow enemies until they burst
+GEM
+  -obstacles
+    -- quests (goal->reward system deconstruction)
+    -- also is the final boss
+
+individual things (classes of things)
+
+a player
+an enemy
+  -shield against sword (pullable by hook)
+  -plant enemy that grows too big to live when fertilized, regrows against sword
+  -water elemental frozen by ice sword
+  -fire enemies (burn plants/rope bridges)
+an item held
+an item pickup
+a wall
+  -climbable
+  -door
+a floor
+  -plants
+  -hole
+  -grapple point
+
+
+
+shiny particle effects
+
+
+gem dialogue
+main quest:
+  collect sword of frozen souls (it once belonged to a demon from an icy human HELL)
+  obtain the hooks of clinging (its just a grappling hook, but it needs a cool name)
+  find the ancient druid's spell (quite the green thumb)
+  you are ready ... explore the inner sanctum
+
+minor quests:
+  destroy that minion of evil, that one right there, i want it dead
+  scale that wall ... yes this is a nice view, you may continue
+
+sparkle sparkle new quest sparkle sparkle
+you received 500 gold!!!! jingle jingle jingle sndfx particles
+you cannot unequip the GEM
+can only communicate through quest markers
