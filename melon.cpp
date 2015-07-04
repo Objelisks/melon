@@ -6,9 +6,13 @@
 MelonApp::MelonApp(PolycodeView *view) {
   core = new POLYCODE_CORE(view, 640, 480, false, true, 0, 0, 90, 0, true);
 
-  scene = new PhysicsScene();
+	CoreServices::getInstance()->getResourceManager()->addArchive("default.pak");
+	CoreServices::getInstance()->getResourceManager()->addDirResource("default", false);
 
-  ScenePrimitive *ground = new ScenePrimitive(ScenePrimitive::TYPE_PLANE, 10, 10);
+  scene = new PhysicsScene();
+  //scene->setGravity(Vector3(0, -0.1, 0));
+
+  //ScenePrimitive *ground = new ScenePrimitive(ScenePrimitive::TYPE_PLANE, 10, 10);
   //ground->loadTexture("Resources/green_texture.png");
   //scene->addPhysicsChild(ground, PhysicsSceneEntity::SHAPE_PLANE, 0.0);
 /*
@@ -24,10 +28,11 @@ MelonApp::MelonApp(PolycodeView *view) {
   Level::loadLevel("level/test.dae", scene);
 
 	player = new Player();
+	player->loadTexture("Resources/pink_texture.png");
 	player->addToScene(scene);
-	player->setPosition(Vector3(0, 3, 0));
+	player->setPosition(Vector3(1, 5, 1));
 
-  scene->getDefaultCamera()->setPosition(-7, 7, -7);
+  scene->getDefaultCamera()->setPosition(-5, 9, -5);
   scene->getDefaultCamera()->lookAt(Vector3(0, 0, 0));
 }
 
@@ -38,6 +43,7 @@ MelonApp::~MelonApp() {
 }
 
 bool MelonApp::Update() {
+  scene->getDefaultCamera()->setPosition(player->getPosition() + Vector3(-5, 9, -5));
   return core->updateAndRender();
 }
 

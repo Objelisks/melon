@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.75.0 commit date:2015-07-01, commit time:12:00, hash:c6b042b</authoring_tool>
+    </contributor>
+    <created>2015-07-03T19:44:04</created>
+    <modified>2015-07-03T19:44:04</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="Material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Material-material" name="Material">
+      <instance_effect url="#Material-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Player-mesh" name="Player">
+      <mesh>
+        <source id="Player-mesh-positions">
+          <float_array id="Player-mesh-positions-array" count="24">1 1 -1 1 -1 -1 -1 -0.9999998 -1 -0.9999997 1 -1 1 0.9999995 1 0.9999994 -1.000001 1 -1 -0.9999997 1 -1 1 1</float_array>
+          <technique_common>
+            <accessor source="#Player-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Player-mesh-normals">
+          <float_array id="Player-mesh-normals-array" count="36">0 0 -1 0 0 1 1 -5.96046e-7 3.27825e-7 -4.76837e-7 -1 0 -1 2.38419e-7 -1.19209e-7 2.08616e-7 1 0 0 0 -1 0 0 1 1 0 -2.38419e-7 0 -1 -4.76837e-7 -1 2.38419e-7 -1.49012e-7 2.68221e-7 1 2.38419e-7</float_array>
+          <technique_common>
+            <accessor source="#Player-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Player-mesh-vertices">
+          <input semantic="POSITION" source="#Player-mesh-positions"/>
+        </vertices>
+        <polylist material="Material-material" count="12">
+          <input semantic="VERTEX" source="#Player-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Player-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>0 0 1 0 2 0 7 1 6 1 5 1 4 2 5 2 1 2 5 3 6 3 2 3 2 4 6 4 7 4 0 5 3 5 7 5 3 6 0 6 2 6 4 7 7 7 5 7 0 8 4 8 1 8 1 9 5 9 2 9 3 10 2 10 7 10 4 11 0 11 7 11</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Sword-mesh" name="Sword">
+      <mesh>
+        <source id="Sword-mesh-positions">
+          <float_array id="Sword-mesh-positions-array" count="24">-0.4 -2 -0.1999999 -0.4 -2 0.1999999 -0.4 2 -0.1999999 -0.4 2 0.1999999 0.4 -2 -0.1999999 0.4 -2 0.1999999 0.4 2 -0.1999999 0.4 2 0.1999999</float_array>
+          <technique_common>
+            <accessor source="#Sword-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Sword-mesh-normals">
+          <float_array id="Sword-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Sword-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Sword-mesh-vertices">
+          <input semantic="POSITION" source="#Sword-mesh-positions"/>
+        </vertices>
+        <polylist count="12">
+          <input semantic="VERTEX" source="#Sword-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sword-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 2 0 0 0 7 1 6 1 2 1 5 2 4 2 6 2 1 3 0 3 4 3 2 4 6 4 4 4 7 5 3 5 1 5 1 0 3 0 0 0 3 1 7 1 2 1 7 2 5 2 6 2 5 3 1 3 4 3 0 4 2 4 4 4 5 5 7 5 1 5</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Sword_location_X">
+      <source id="Sword_location_X-input">
+        <float_array id="Sword_location_X-input-array" count="8">0.04166662 0.08333331 0.1666666 0.25 0.3333333 0.4166666 0.5 0.5833333</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_X-input-array" count="8" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_X-output">
+        <float_array id="Sword_location_X-output-array" count="8">0 -1.092355 -1.99495 -1.893808 -1.058482 0.0841149 3.525617 2.434218</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_X-output-array" count="8" stride="1">
+            <param name="X" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_X-interpolation">
+        <Name_array id="Sword_location_X-interpolation-array" count="8">BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER</Name_array>
+        <technique_common>
+          <accessor source="#Sword_location_X-interpolation-array" count="8" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_X-intangent">
+        <float_array id="Sword_location_X-intangent-array" count="16">0.0253995 0 0.06706619 -0.7910256 0.1341323 -1.99495 0.2174657 -1.99495 0.300799 -1.444584 0.3841324 -0.8107274 0.4674657 3.525617 0.5507991 2.434218</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_X-intangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_X-outtangent">
+        <float_array id="Sword_location_X-outtangent-array" count="16">0.0579338 0 0.1158676 -1.695015 0.1992009 -1.99495 0.2825343 -1.792666 0.3658676 -0.6723799 0.4492009 0.9789572 0.5325343 3.525617 0.6158676 2.434218</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_X-outtangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Sword_location_X-sampler">
+        <input semantic="INPUT" source="#Sword_location_X-input"/>
+        <input semantic="OUTPUT" source="#Sword_location_X-output"/>
+        <input semantic="INTERPOLATION" source="#Sword_location_X-interpolation"/>
+        <input semantic="IN_TANGENT" source="#Sword_location_X-intangent"/>
+        <input semantic="OUT_TANGENT" source="#Sword_location_X-outtangent"/>
+      </sampler>
+      <channel source="#Sword_location_X-sampler" target="Sword/location.X"/>
+    </animation>
+    <animation id="Sword_location_Y">
+      <source id="Sword_location_Y-input">
+        <float_array id="Sword_location_Y-input-array" count="8">0.04166662 0.08333331 0.1666666 0.25 0.3333333 0.4166666 0.5 0.5833333</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Y-input-array" count="8" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Y-output">
+        <float_array id="Sword_location_Y-output-array" count="8">-1.024764 -0.281498 0.6001753 1.804925 2.355041 2.407847 1.240371 -2.54563</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Y-output-array" count="8" stride="1">
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Y-interpolation">
+        <Name_array id="Sword_location_Y-interpolation-array" count="8">BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER</Name_array>
+        <technique_common>
+          <accessor source="#Sword_location_Y-interpolation-array" count="8" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Y-intangent">
+        <float_array id="Sword_location_Y-intangent-array" count="16">0.0253995 -1.024764 0.06706619 -0.5126416 0.1341323 0.1928935 0.2174657 1.462365 0.300799 2.302236 0.3841324 2.407847 0.4674657 2.207318 0.5507991 -2.54563</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Y-intangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Y-outtangent">
+        <float_array id="Sword_location_Y-outtangent-array" count="16">0.0579338 -1.024764 0.1158676 0.180789 0.1992009 1.007457 0.2825343 2.147485 0.3658676 2.407847 0.4492009 2.407847 0.5325343 0.2734241 0.6158676 -2.54563</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Y-outtangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Sword_location_Y-sampler">
+        <input semantic="INPUT" source="#Sword_location_Y-input"/>
+        <input semantic="OUTPUT" source="#Sword_location_Y-output"/>
+        <input semantic="INTERPOLATION" source="#Sword_location_Y-interpolation"/>
+        <input semantic="IN_TANGENT" source="#Sword_location_Y-intangent"/>
+        <input semantic="OUT_TANGENT" source="#Sword_location_Y-outtangent"/>
+      </sampler>
+      <channel source="#Sword_location_Y-sampler" target="Sword/location.Y"/>
+    </animation>
+    <animation id="Sword_location_Z">
+      <source id="Sword_location_Z-input">
+        <float_array id="Sword_location_Z-input-array" count="8">0.04166662 0.08333331 0.1666666 0.25 0.3333333 0.4166666 0.5 0.5833333</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Z-input-array" count="8" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Z-output">
+        <float_array id="Sword_location_Z-output-array" count="8">0 1.523075 2.366638 2.291226 2.606419 2.274451 1.657351 1.718456</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Z-output-array" count="8" stride="1">
+            <param name="Z" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Z-interpolation">
+        <Name_array id="Sword_location_Z-interpolation-array" count="8">BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER</Name_array>
+        <technique_common>
+          <accessor source="#Sword_location_Z-interpolation-array" count="8" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Z-intangent">
+        <float_array id="Sword_location_Z-intangent-array" count="16">0.0253995 0 0.06706619 1.143427 0.1341323 2.366638 0.2174657 2.291226 0.300799 2.606419 0.3841324 2.459714 0.4674657 1.657351 0.5507991 1.718456</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Z-intangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_location_Z-outtangent">
+        <float_array id="Sword_location_Z-outtangent-array" count="16">0.0579338 0 0.1158676 2.282369 0.1992009 2.366638 0.2825343 2.291226 0.3658676 2.606419 0.4492009 2.089187 0.5325343 1.657351 0.6158676 1.718456</float_array>
+        <technique_common>
+          <accessor source="#Sword_location_Z-outtangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Sword_location_Z-sampler">
+        <input semantic="INPUT" source="#Sword_location_Z-input"/>
+        <input semantic="OUTPUT" source="#Sword_location_Z-output"/>
+        <input semantic="INTERPOLATION" source="#Sword_location_Z-interpolation"/>
+        <input semantic="IN_TANGENT" source="#Sword_location_Z-intangent"/>
+        <input semantic="OUT_TANGENT" source="#Sword_location_Z-outtangent"/>
+      </sampler>
+      <channel source="#Sword_location_Z-sampler" target="Sword/location.Z"/>
+    </animation>
+    <animation id="Sword_rotation_euler_X">
+      <source id="Sword_rotation_euler_X-input">
+        <float_array id="Sword_rotation_euler_X-input-array" count="8">0.04166662 0.08333331 0.1666666 0.25 0.3333333 0.4166666 0.5 0.5833333</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_X-input-array" count="8" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_X-output">
+        <float_array id="Sword_rotation_euler_X-output-array" count="8">101.0983 147.5928 208.9946 246.5314 294.3572 332.5455 341.2868 339.4817</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_X-output-array" count="8" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_X-interpolation">
+        <Name_array id="Sword_rotation_euler_X-interpolation-array" count="8">BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER</Name_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_X-interpolation-array" count="8" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_X-intangent">
+        <float_array id="Sword_rotation_euler_X-intangent-array" count="16">0.0253995 101.0983 0.06706619 132.5238 0.1341323 189.6813 0.2174657 229.8681 0.300799 277.5668 0.3841324 323.8043 0.4674657 341.2868 0.5507991 339.4817</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_X-intangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_X-outtangent">
+        <float_array id="Sword_rotation_euler_X-outtangent-array" count="16">0.0579338 101.0983 0.1158676 177.7308 0.1992009 228.308 0.2825343 263.1946 0.3658676 311.1477 0.4492009 341.2868 0.5325343 341.2868 0.6158676 339.4817</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_X-outtangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Sword_rotation_euler_X-sampler">
+        <input semantic="INPUT" source="#Sword_rotation_euler_X-input"/>
+        <input semantic="OUTPUT" source="#Sword_rotation_euler_X-output"/>
+        <input semantic="INTERPOLATION" source="#Sword_rotation_euler_X-interpolation"/>
+        <input semantic="IN_TANGENT" source="#Sword_rotation_euler_X-intangent"/>
+        <input semantic="OUT_TANGENT" source="#Sword_rotation_euler_X-outtangent"/>
+      </sampler>
+      <channel source="#Sword_rotation_euler_X-sampler" target="Sword/rotationX.ANGLE"/>
+    </animation>
+    <animation id="Sword_rotation_euler_Y">
+      <source id="Sword_rotation_euler_Y-input">
+        <float_array id="Sword_rotation_euler_Y-input-array" count="8">0.04166662 0.08333331 0.1666666 0.25 0.3333333 0.4166666 0.5 0.5833333</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Y-input-array" count="8" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Y-output">
+        <float_array id="Sword_rotation_euler_Y-output-array" count="8">-227.5715 -211.8522 -197.2204 -193.4306 -182.7251 -178.7057 -181.2073 -183.368</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Y-output-array" count="8" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Y-interpolation">
+        <Name_array id="Sword_rotation_euler_Y-interpolation-array" count="8">BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER</Name_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Y-interpolation-array" count="8" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Y-intangent">
+        <float_array id="Sword_rotation_euler_Y-intangent-array" count="16">0.0253995 -227.5715 0.06706619 -216.3488 0.1341323 -200.8164 0.2174657 -196.2602 0.300799 -185.5995 0.3841324 -178.7057 0.4674657 -180.2972 0.5507991 -183.368</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Y-intangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Y-outtangent">
+        <float_array id="Sword_rotation_euler_Y-outtangent-array" count="16">0.0579338 -227.5715 0.1158676 -202.859 0.1992009 -193.6244 0.2825343 -190.6011 0.3658676 -179.8507 0.4492009 -178.7057 0.5325343 -182.1175 0.6158676 -183.368</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Y-outtangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Sword_rotation_euler_Y-sampler">
+        <input semantic="INPUT" source="#Sword_rotation_euler_Y-input"/>
+        <input semantic="OUTPUT" source="#Sword_rotation_euler_Y-output"/>
+        <input semantic="INTERPOLATION" source="#Sword_rotation_euler_Y-interpolation"/>
+        <input semantic="IN_TANGENT" source="#Sword_rotation_euler_Y-intangent"/>
+        <input semantic="OUT_TANGENT" source="#Sword_rotation_euler_Y-outtangent"/>
+      </sampler>
+      <channel source="#Sword_rotation_euler_Y-sampler" target="Sword/rotationY.ANGLE"/>
+    </animation>
+    <animation id="Sword_rotation_euler_Z">
+      <source id="Sword_rotation_euler_Z-input">
+        <float_array id="Sword_rotation_euler_Z-input-array" count="8">0.04166662 0.08333331 0.1666666 0.25 0.3333333 0.4166666 0.5 0.5833333</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Z-input-array" count="8" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Z-output">
+        <float_array id="Sword_rotation_euler_Z-output-array" count="8">12.79569 29.60222 43.74697 33.93149 25.95516 -2.60277 -84.33045 -161.314</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Z-output-array" count="8" stride="1">
+            <param name="ANGLE" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Z-interpolation">
+        <Name_array id="Sword_rotation_euler_Z-interpolation-array" count="8">BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER BEZIER</Name_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Z-interpolation-array" count="8" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Z-intangent">
+        <float_array id="Sword_rotation_euler_Z-intangent-array" count="16">0.0253995 12.79569 0.06706619 24.94091 0.1341323 43.74697 0.2174657 37.40456 0.300799 33.08686 0.3841324 18.92562 0.4674657 -53.34911 0.5507991 -161.314</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Z-intangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="Sword_rotation_euler_Z-outtangent">
+        <float_array id="Sword_rotation_euler_Z-outtangent-array" count="16">0.0579338 12.79569 0.1158676 38.92481 0.1992009 43.74697 0.2825343 30.45843 0.3658676 18.82346 0.4492009 -24.13116 0.5325343 -115.3118 0.6158676 -161.314</float_array>
+        <technique_common>
+          <accessor source="#Sword_rotation_euler_Z-outtangent-array" count="8" stride="2">
+            <param name="X" type="float"/>
+            <param name="Y" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="Sword_rotation_euler_Z-sampler">
+        <input semantic="INPUT" source="#Sword_rotation_euler_Z-input"/>
+        <input semantic="OUTPUT" source="#Sword_rotation_euler_Z-output"/>
+        <input semantic="INTERPOLATION" source="#Sword_rotation_euler_Z-interpolation"/>
+        <input semantic="IN_TANGENT" source="#Sword_rotation_euler_Z-intangent"/>
+        <input semantic="OUT_TANGENT" source="#Sword_rotation_euler_Z-outtangent"/>
+      </sampler>
+      <channel source="#Sword_rotation_euler_Z-sampler" target="Sword/rotationZ.ANGLE"/>
+    </animation>
+  </library_animations>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Player" name="Player" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#Player-mesh" name="Player">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Sword" name="Sword" type="NODE">
+        <translate sid="location">2.434218 -2.54563 1.718456</translate>
+        <rotate sid="rotationZ">0 0 1 18.68604</rotate>
+        <rotate sid="rotationY">0 1 0 3.368026</rotate>
+        <rotate sid="rotationX">1 0 0 159.4817</rotate>
+        <scale sid="scale">1 1 0.9999999</scale>
+        <instance_geometry url="#Sword-mesh" name="Sword"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

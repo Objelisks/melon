@@ -1,6 +1,7 @@
 #pragma once
 #include "Polycode.h"
 #include "Polycode3DPhysics.h"
+#include "sword.h"
 
 using namespace Polycode;
 
@@ -15,4 +16,5 @@ public:
 private:
   PhysicsCharacter* controller;
   Vector2 movement;
+  Sword* sword;
 };

@@ -2,11 +2,17 @@
 #include <string>
 
 SceneMesh* build_thing(String name) {
-  if(name == "Floor") {
+  if(name == "#Floor-mesh") {
     return new ScenePrimitive(ScenePrimitive::TYPE_BOX);
   }
-  if(name == "Wall") {
+  if(name == "#Wall-mesh") {
     return new ScenePrimitive(ScenePrimitive::TYPE_BOX);
+  }
+  if(name == "#Ramp-mesh") {
+    SceneMesh* mesh = new ScenePrimitive(ScenePrimitive::TYPE_PLANE);
+    mesh->setPitch(-45);
+    mesh->setPosition(0, -0.1, 0);
+    return mesh;
   }
 
   return new ScenePrimitive(ScenePrimitive::TYPE_BOX);
@@ -38,9 +44,10 @@ void Level::loadLevel(String file, PhysicsScene* scene) {
 
     String name = (*((*node)["instance_geometry"]))["url"]->stringVal;
     SceneMesh* entity = build_thing(name);
+  	entity->loadTexture("Resources/green_texture.png");
     std::vector<String> transform = (*node)["matrix"]->stringVal.split(" ");
-    Vector3 pos(transform[3].toNumber(), transform[11].toNumber(), transform[7].toNumber());
-    entity->setPosition(pos);
+    Vector3 pos(-transform[3].toNumber(), transform[11].toNumber(), transform[7].toNumber());
+    entity->Translate(pos);
     scene->addPhysicsChild(entity);
   }
 
